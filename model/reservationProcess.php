@@ -9,9 +9,9 @@
         $result = $model->query($query);
 
         if($result){
-            return "ok";
+            return true;
         } else {
-            return mysqli_error($model->dbconn);
+            return false;
         }
     }
 
@@ -25,9 +25,9 @@
         $result = $model->query($query);
 
         if($result){
-            return "delete reservation"
+            return true;
         } else {
-            return "no data"
+            return false;
         }
     }
 
@@ -45,7 +45,7 @@
             return $result;
         } else {
             $model->close();
-            return "no data"
+            return "no data";
         }
     }
 ?>

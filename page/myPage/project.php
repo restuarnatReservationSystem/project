@@ -14,7 +14,7 @@
             <img src="기본 프로필.png" alt="Profile Image">
             <div class="info">
                 <?php
-                    session_start()
+                    session_start();
                     echo $_SESSION['nickname'];
                 ?>
             </div>
