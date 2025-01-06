@@ -11,7 +11,7 @@
         $nickname = $_POST['nickname'];
         $p_num = $_POST['p_num'];
 
-        include 'model\userJoin.php';
+        include '../model/userJoin.php';
 
         userJoin($uid, $upw, $nickname, $p_num);
         ?>
