@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: sticky;
+    height: 70px;
+}
+.header h2 {
+    flex-grow: 1;
+    text-align: center;
+}
+.header a {
+    text-align: right;
+}
