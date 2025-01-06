@@ -11,17 +11,17 @@
 
         if(isset($user)){
             session_start();
-            $_SESSION['uid'] = $user['uid'];
-            $_SESSION['nickanme'] = $user['nickname'];
-            $_SESSION['p_num'] = $user['p_num'];
+            $_SESSION['uid'] = $user['user_id'];
+            $_SESSION['nickname'] = $user['nickname'];
+            $_SESSION['p_num'] = $user['p_num'];    
             $_SESSION['time'] = time();
 
             $model->close();
-            return null
+            return true;
 
         }else{
-            $model->close()
-            return null;
+            $model->close();
+            return false;
         }
     }
 
