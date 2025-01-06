@@ -34,13 +34,13 @@
 
     <main class="main-content" id="restaurant-list">
         <?php
-            include('../../model/categoryProcess.php');
+            include('../../model/postProcess.php');
             include('../../model/model.php');
 
             $model = new Model();
             $category = isset($_GET['category']) ? $_GET['category'] : null;
 
-            $result = post($category);
+            $result = postList($category);
 
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = $model->fetch($result)) {
@@ -48,6 +48,7 @@
                     echo "<h3>" . $row['r_name'] . "</h3>";
                     echo "<p>전화번호: " . $row['p_num'] . "</p>";
                     echo "</div>"; // ui 생성
+                    echo "<a href='../restaurantInfoPage/restaurantInfoPage.php?r_name=" . urlencode($row['r_name']) . "'>" . $row['r_name'] . "</a>";
                 }
             } else {
                 echo "<p>해당 카테고리에 대한 식당 정보가 없습니다.</p>";
