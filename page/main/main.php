@@ -56,7 +56,6 @@
     </main>
 
     <script>
-        // 카테고리 클릭 시 해당 카테고리를 GET 방식으로 전달하는 함수
         function loadCategory(category) {
             if (category === null) {
                 window.location.href = window.location.pathname;
