@@ -89,6 +89,7 @@ body {
     font-size: 20px;
     padding: 15px 25px;
     border-right: 1px solid #ddd;
+    cursor: pointer;
 }
 
 .category-item:last-child {
