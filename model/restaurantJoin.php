@@ -1,11 +1,11 @@
 <?php
-    function userJoin($uid, $upw, $nickname, $p_num) {
+    function userJoin($restaurant_id, $rpw, $r_name, $p_num, $category, $seatType) {
         require_once ('model.php');
 
         $model = new Model();
         $model->open();
 
-        $query = "INSERT INTO user (user_id, upw, nickname, p_num) VALUES ('$uid', '$upw', '$nickname', '$p_num')";
+        $query = "INSERT INTO user (restaurant_id, rpw, r_name, p_num. category, seatType) VALUES ('$restaurant_id', '$rpw', '$r_name', '$p_num', '$category', '$seatType');";
         $result = $model->query($query);
 
         if ($result) {

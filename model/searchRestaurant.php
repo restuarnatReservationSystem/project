@@ -1,16 +1,16 @@
 <?php
-        function createReservation($search){
+        function searchRestaurant($search){
             require_once ('model.php');
     
             $model = new Model();
             $model->open();
     
-            $query = "SELECT * from reservation where user_id = '$user_id';";
+            $query = "SELECT * from restaurant where r_name = '%$search%';";
             $result = $model->query($query);
     
             if($result){
                 $model->close();
-                return "ok";
+                return $result;
             } else {
                 $model->close();
                 return mysqli_error($model->dbconn);
