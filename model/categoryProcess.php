@@ -14,5 +14,4 @@
             return mysqli_error($model->dbconn)
         }
     }
-    asdfsdf
 ?>
