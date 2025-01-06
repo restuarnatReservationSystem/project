@@ -24,4 +24,8 @@
             return null;
         }
     }
+
+    function userMyPage($user){
+                
+    }
 ?>
