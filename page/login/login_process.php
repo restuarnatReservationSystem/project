@@ -14,7 +14,7 @@
             $result = userLoginProcess($uid, $upw);
 
             if ($result) {
-                echo "로그인 성공! 환영합니다.";
+                echo "로그인 성공! 환영합니다.".$_SESSION['nickname'];
                 echo "<br>3초 후 가게 페이지로 이동합니다.<br>";
                 header("Refresh: 1; url=../main/main.html");
             } else {

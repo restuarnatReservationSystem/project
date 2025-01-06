@@ -1,18 +1,23 @@
 <?php
-    function category($category){
-        require_once './model.php';
+    function post($category){
+        require_once ('model.php');
 
         $model = new Model();
         $model->open();
-
-        $query = "SELECT * from restaurant where category = $category"
+        if($category){
+            $query = "SELECT r.r_name, r.p_num, r.category, p.* FROM post p JOIN restaurant r ON p.restaurant_id = r.restaurant_id WHERE r.category = '$category';";
+        } else {
+            $query = "SELECT r.r_name, r.p_num, r.category, p.* FROM post p JOIN restaurant r ON p.restaurant_id = r.restaurant_id;";
+        }
+        
         $result = $model->query($query);
 
-        if(isset($result)){
+        if($result && mysqli_num_rows($result) != 0){
+            echo "true";
             return $result;
         } else {
-            return mysqli_error($model->dbconn)
+            echo "false";
+            return false;
         }
     }
-    
 ?>
