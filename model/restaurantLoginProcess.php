@@ -1,6 +1,6 @@
 <?php
     function userLoginProcess($rid, $rpw){
-        require_once './model.php';
+        require_once ('model.php');
 
         $model = new Model();
         $model->open();

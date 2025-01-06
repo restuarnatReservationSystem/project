@@ -1,6 +1,6 @@
 <?php
     function category($category){
-        require_once './model.php';
+        require_once ('model.php');
 
         $model = new Model();
         $model->open();
@@ -9,9 +9,11 @@
         $result = $model->query($query);
 
         if(isset($result)){
+            $model->close();
             return $result;
         } else {
-            return mysqli_error($model->dbconn)
+            $model->close();
+            return mysqli_error($model->dbconn);
         }
     }
     

@@ -13,7 +13,7 @@ class Model {
         }
     }
 
-    protected function query($query) {
+    public function query($query) {
         $result = mysqli_query($this->dbconn, $query);
         if (!$result) {
             die(mysqli_error($this->dbconn));
@@ -21,7 +21,7 @@ class Model {
         return $result;
     }
 
-    protected function fetch($result) {
+    public function fetch($result) {
         return mysqli_fetch_array($result);
     }
 

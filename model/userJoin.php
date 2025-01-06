@@ -1,6 +1,6 @@
 <?php
     function userJoin($uid, $upw, $nickname, $p_num) {
-        require_once './model.php';
+        require_once ('model.php');
 
         $model = new Model();
         $model->open();
@@ -9,11 +9,12 @@
         $result = $model->query($query);
 
         if ($result) {
+            $model->close();
             return "ok";
         } else {
             $error = mysqli_error($model->dbconn);
-            return "$error";
+            $model->close();
+            return $error;
         }
     }
 ?>
-    

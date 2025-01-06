@@ -1,6 +1,6 @@
 <?php
     function userLoginProcess($uid, $upw){
-        require_once './model.php';
+        require_once ('model.php');
 
         $model = new Model();
         $model->open();
@@ -26,6 +26,6 @@
     }
 
     function userMyPage($user){
-                
+
     }
 ?>

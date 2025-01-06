@@ -1,6 +1,6 @@
 <?php
     function createReservation($user_id, $seat_id){
-        require_once './model.php';
+        require_once ('model.php')
 
         $model = new Model();
         $model->open();
@@ -16,7 +16,7 @@
     }
 
     function removeReservation($user_id, $seat_id){
-        require_once './model.php';
+        require_once ('./model.php')
 
         $model = new Model();
         $model->open();
@@ -32,7 +32,7 @@
     }
 
     function checkReservation($user_id, $user_pw){
-        require_once './model.php';
+        require_once ('./model.php')
 
         $model = new Model();
         $model->open();
@@ -41,8 +41,10 @@
         $result = $model->query($query);
 
         if(isset($result)){
+            $model->close();
             return $result;
         } else {
+            $model->close();
             return "no data"
         }
     }
