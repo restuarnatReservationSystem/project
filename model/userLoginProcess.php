@@ -12,8 +12,7 @@
         if(isset($user)){
             session_start();
             $_SESSION['uid'] = $user['user_id'];
-            $_SESSION['nickname'] = $user['nickname'];
-            $_SESSION['p_num'] = $user['p_num'];    
+            $_SESSION['nickname'] = $user['nickname'];  
             $_SESSION['time'] = time();
 
             $model->close();

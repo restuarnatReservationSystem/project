@@ -21,9 +21,10 @@
 
                 $result = post($r_name);
                 echo "<img src='{$result['postimg']}' style='height:400px; width:100%; object-fit:cover;'>";
-
             ?>
         </div>
+        <a href="../reservation/reservation<?php echo urlencode($result['seatType'])?>.html?r_name=<?php echo urlencode($r_name); ?>">이동</a>
+
     </body>
 
 </html>

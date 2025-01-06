@@ -25,7 +25,7 @@
         $model = new Model();
         $model->open();
 
-        $query = "SELECT r.r_name, r.p_num, r.category, p.* FROM post p JOIN restaurant r ON p.restaurant_id = r.restaurant_id WHERE r.r_name = '$r_name';";
+        $query = "SELECT r.*, p.* FROM post p JOIN restaurant r ON p.restaurant_id = r.restaurant_id WHERE r.r_name = '$r_name';";
         $result = $model->query($query);
         $row = $model->fetch($result);
         if($result && mysqli_num_rows($result) != 0){

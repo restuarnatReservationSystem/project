@@ -8,15 +8,20 @@
         <?php
             $uid = $_POST['uid'];
             $upw = $_POST['upw'];
-
-            include('../../model/userLoginProcess.php');
-
-            $result = userLoginProcess($uid, $upw);
+            $user = $_POST['user'];
+            if($user == 'user') {
+                include('../../model/userLoginProcess.php');
+                $result = userLoginProcess($uid, $upw);
+            } else {
+                include('../../model/restaurantLoginProcess.php');
+                $result = restaurantLoginProcess($uid, $upw);
+            }
+            
 
             if ($result) {
                 echo "로그인 성공! 환영합니다.".$_SESSION['nickname'];
                 echo "<br>3초 후 가게 페이지로 이동합니다.<br>";
-                header("Refresh: 1; url=../main/main.html");
+                header("Refresh: 1; url='../main/main.php'");
             } else {
                 echo "아이디 또는 비밀번호가 틀렸습니다. 다시 시도해주세요.";
                 echo "<br>3초 후 로그인 페이지로 이동합니다.<br>";

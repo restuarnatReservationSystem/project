@@ -1,28 +1,27 @@
 <?php
-    function userLoginProcess($rid, $rpw){
+    function restaurantLoginProcess($rid, $rpw){
         require_once ('model.php');
 
         $model = new Model();
         $model->open();
 
-        $query = "SELECT * FROM restaurant WHERE restaurant = '$rid' && rpw = '$rpw';";
+        $query = "SELECT * FROM restaurant WHERE restaurant_id = '$rid' && rpw = '$rpw';";
         $result = $model->query($query);
         $restaurant = $model->fetch($result);
 
-        if($user){
+        if($restaurant){
             session_start();
-            $_SESSION['restaurant_id'] = $restaurant['restaurant_id'];
-            $_SESSION['r_name'] = $restaurant['r_name'];
-            $_SESSION['p_num'] = $restaurant['p_num'];
+            $_SESSION['uid'] = $restaurant['restaurant_id'];
+            $_SESSION['nickname'] = $restaurant['r_name'];
             $_SESSION['time'] = time();
 
 
             $model->close();
-            return null;
+            return true;
 
         }else{
-            $model->close()
-            return null;
+            $model->close();
+            return false;
         }
     }
 ?>
