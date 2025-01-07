@@ -36,4 +36,22 @@
             return false;
         }
     }
+
+    function createPost($restaurant_id){
+        require_once ('model.php');
+
+        $model = new Model();
+        $model->open();
+
+        $query = "INSERT INTO post(restaurant_id) values $restaurant_id";
+        $result = $model->query($query);
+        
+        if ($result) {
+            $model->close();
+            return true;
+        } else {
+            $model->close();
+            return false;
+        }
+    }
 ?>
