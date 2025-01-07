@@ -31,7 +31,7 @@
             ?>
         </div>
         <div class='menuBar'>
-            <div style='padding-right: 10px;'>
+            <div style='padding-right: ;'>
                 <a href="../reservation/reservation<?php echo urlencode($result['seatType'])?>.html?r_name=<?php echo urlencode($r_name); ?>">이동</a>
                 <button name='Review' style='width:100px;'>리뷰</button>
                 <button name='Menu' style='width:100px;'>메뉴</button>

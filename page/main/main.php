@@ -24,11 +24,12 @@
     </header>
 
     <section class="category-section">
+        <h2 class="category-title">카테고리</h2>
         <div class="categories">
-            <button class="category-item" onclick="loadCategory(null)">전체</button>
-            <button class="category-item" onclick="loadCategory('한식')">한식</button>
-            <button class="category-item" onclick="loadCategory('양식')">양식</button>
-            <button class="category-item" onclick="loadCategory('중식')">중식</button>
+            <a href="#" class="category-item" onclick="loadCategory(null)">전체</a>
+            <a href="#" class="category-item" onclick="loadCategory('한식')">한식</a>
+            <a href="#" class="category-item" onclick="loadCategory('양식')">양식</a>
+            <a href="#" class="category-item" onclick="loadCategory('중식')">중식</a>
         </div> <!-- 버튼 UI 수정정-->
     </section>
 
@@ -44,12 +45,14 @@
 
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = $model->fetch($result)) {
-                    echo "<div class='restaurant-item'>";
+                    echo '<a href="../restaurantInfoPage/restaurantInfoPage.php?r_name=' . $row['r_name'] . '" class="restaurant-link" style="color: black; text-decoration: none;" onmouseover="this.style.textDecoration=\'underline\'" 
+                    onmouseout="this.style.textDecoration=\'none\'">';
+                    echo "<div class='restaurant-box'>";
+                    echo '<div class="restaurant-info">';
                     echo "<h3>" . $row['r_name'] . "</h3>";
                     echo "<p>전화번호: " . $row['p_num'] . "</p>";
-                    echo "</div>"; // ui 생성
-                    echo "<a href='../restaurantInfoPage/restaurantInfoPage.php?r_name=" . urlencode($row['r_name']) . "'>" . $row['r_name'] . "</a>";
-                }
+                    echo '</div></div>';
+                    echo '</a>';                }
             } else {
                 echo "<p>해당 카테고리에 대한 식당 정보가 없습니다.</p>";
             }
