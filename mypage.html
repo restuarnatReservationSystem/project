@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>마이페이지</h1>
+        </header>
+        <footer class="button">
+            <button class="button1" onclick="seat()">좌석 현황</button>
+        </footer>
+        <footer class="button">
+            <button class="button1" onclick="logout()">로그아웃</button>
+        </footer>
+    </div>
+
+    <script>
+        function seat() {
+            alert("현재 좌석 현황: 풀방");
+        }
+
+        function logout() {
+            alert("로그아웃되었습니다.");
+        }
+    </script>
+</body>
+</html>
