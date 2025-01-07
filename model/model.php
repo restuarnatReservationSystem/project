@@ -13,11 +13,6 @@ class Model {
         }
     }
 
-    public function getDbConnection() {
-        // 데이터베이스 연결 객체 반환
-        return $this->dbconn;
-    }
-
     public function query($query) {
         $result = mysqli_query($this->dbconn, $query);
         if (!$result) {

@@ -101,6 +101,11 @@
             }
 
         </style>
+        <script>
+            function click(){
+                window.location.href = 'main.php';
+            }
+        </script>
     </head>
     <body>
         <div id="main">
@@ -126,6 +131,13 @@
                 </div>
                 </div>
             </from> 
-        </div>   
+        </div>
+        <script>
+            window.onload = function() {
+                document.querySelector('.back').onclick = function() {
+                    window.location.href = "../main/main.php";
+            }
+        }
+        </script>   
     </body>
 </html>

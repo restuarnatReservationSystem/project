@@ -26,7 +26,7 @@
             echo "</div>";
         } else {
             include('../../model/restaurantJoin.php');
-            $result = restaurantJoin($restaurant_id, $rpw, $p_num, $r_name, $category, $seatType);
+            $result = restaurantJoin($restaurant_id, $rpw, $r_name, $p_num, $category, $seatType);
 
             if ($result) {
                 echo "<div id='main'>";
