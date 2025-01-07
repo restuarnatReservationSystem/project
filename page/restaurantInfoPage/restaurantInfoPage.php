@@ -19,7 +19,7 @@
         <?php
             $r_name = $_GET['r_name'];
             echo "<h2>".$r_name."</h2>";
-            echo isset($_SESSION['uid']) ?  '': "<a href='../login/login.html'>로그인</a>";
+            echo isset($_SESSION['uid']) ?  '로그아웃': "<a href='../login/login.html'>로그인</a>";
         ?>
         </div>
         <div class="banner">
@@ -37,7 +37,14 @@
                 <button name='Menu' style='width:100px;'>메뉴</button>
                 <button name='Info' style='width:100px;'>정보</button>
             </div>
-            
+        </div>
+        <div class='reviewBox'>
+            <?php
+                include('../../model/review.php');
+
+                $result = readReview($result['post_id']);
+                
+            ?>
         </div>
 
     </body>
