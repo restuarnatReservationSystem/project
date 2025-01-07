@@ -12,21 +12,21 @@
 <body>
     <header class="header">
         <div class="header-left">
-            <h1 class="title">제목</h1>
+        <a href='../main/main.php' style='text-decoration: none; color: black'><h1 class="title">제목</h1></a>
         </div>
-        <div class="header-center">
-            <input type="text" class="search-bar" placeholder="검색...">
-        </div>
+        <form action='../search/search.php' method='get' class="header-center">
+            <input type="text" class="search-bar" placeholder="검색..." name='search'>
+            <button type="submit" style='background:none; border: none; padding: 0; cursor:pointer;'><img src="./search.png" style="width: 40px;"></button>
+        </form>
         <nav class="header-right">
-            <a href="#" class="nav-item">마이페이지</a>
+            
             <?php
                 session_start(); // 세션 시작
                 // 세션에 'uid'가 설정되어 있다면 "로그아웃" 링크 출력, 아니라면 "로그인" 링크 출력
                 echo isset($_SESSION['uid']) ? 
-                     '<a href="../login/logout_process.php" class="nav-item">로그아웃</a>' : 
+                     '<a href="../myPage/myPage.php" class="nav-item">마이페이지</a><a href="../login/logout_process.php" class="nav-item">로그아웃</a>' : 
                      '<a href="../login/login.html" class="nav-item">로그인</a>';
             ?>
-            
         </nav>
     </header>
 

@@ -8,12 +8,12 @@
             $query = "SELECT * from restaurant where r_name = '%$search%';";
             $result = $model->query($query);
     
-            if($result){
+            if($result && mysqli_num_rows($result) != 0){
                 $model->close();
                 return $result;
             } else {
                 $model->close();
-                return mysqli_error($model->dbconn);
+                return false;
             }
         }
 ?>

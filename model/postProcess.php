@@ -43,7 +43,7 @@
         $model = new Model();
         $model->open();
 
-        $query = "INSERT INTO post(restaurant_id) values($restaurant_id)";
+        $query = "INSERT INTO post (restaurant_id) VALUES ('$restaurant_id')";
         $result = $model->query($query);
         
         if ($result) {

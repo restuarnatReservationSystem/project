@@ -24,7 +24,7 @@
                 echo "<div id='main'>";
                 echo "<div id='header'>";
                 echo "<h1>".$_SESSION['nickname']."님 환영합니다."."</h1>";
-                echo "<h2>3초 후 가게 페이지로 이동합니다.</h2>";
+                echo "<h2>3초 후 메인 페이지로 이동합니다.</h2>";
                 header("Refresh: 1; url='../main/main.php'");
                 echo "</div>";
                 echo "</div>";

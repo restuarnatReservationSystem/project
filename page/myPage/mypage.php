@@ -8,6 +8,7 @@ session_start(); // 세션은 PHP 블록 상단에서 시작합니다.
     <meta charset="UTF-8">
     <title>마이페이지</title>
     <link rel="stylesheet" href="./mypage.css">
+    <link rel="stylesheet" href="../main/css/header.css">
     <style>
         .hidden {
             display: none;
@@ -53,8 +54,17 @@ session_start(); // 세션은 PHP 블록 상단에서 시작합니다.
     </script>
 </head>
 <body>
+<header class="header">
+        <div class="header-left">
+            <a href='../main/main.php' style='text-decoration: none; color: black'><h1 class="title">제목</h1></a>
+        </div>
+        <div class="header-center">
+            <input type="text" class="search-bar" placeholder="검색...">
+        </div>
+        </nav>
+    </header>
     <div class="container">
-        <div class="header">
+        <div class="header" style='justify-content:center;'>
             <h1>마이페이지</h1>
         </div>
         <div class="profile">
