@@ -16,8 +16,8 @@
                 background-color:cadetblue;
                 border-radius: 10px;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-                min-height: 500px;
-                width: 500px; 
+                min-height: 650px;
+                width: 650px; 
                 padding: 20px;
                 display: flex;
                 flex-direction: column; 
@@ -27,25 +27,19 @@
             form{
                 background-color: white;
                 border-radius: 10px;
-                min-height: 450px;
-                width: 450px;
+                height: 600px;
+                width: 600px;
                 display: flex;
-                flex-direction: column; 
-                align-items: center; 
-                justify-content: center; 
+                flex-direction: column;
+                align-items: center;
+                margin: 0px;
                 
             }
             .back{
-                align-self: flex-start;
                 width: 40px;
                 height: 40px;
-                margin-left: 30px;
                 border: none;
                 border-radius: 20px;
-            }
-            h1{
-                margin: 0;
-                margin-bottom: 30px;
             }
             .input-text{
                 border: 2px solid lightgray;
@@ -65,7 +59,39 @@
                 border-radius: 10px;
             }
             a{
+                font-size: 20px;
+                border-color: black;
+                color: inherit;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            #login1{
+                background-color: antiquewhite;
+            }
+            #login2{
                 text-decoration: none;
+            }
+            #text{
+                display: flex;  
+                flex-direction: column;  
+                height: 100%; 
+            }
+            #header{
+                display: flex;
+                flex-direction: row;
+                margin-top: 10px;
+                width: 100%;
+            }
+            #button{
+                padding-left: 20px;
+            }
+            #link{
+                flex-grow: 1;
+                max-width: 220px;
+                margin-top: 30px;
+                margin: auto;
+                margin-top: 30px;
+                padding-left: 30px;
             }
 
         </style>
@@ -73,14 +99,24 @@
     <body>
         <div id="main">
             <form action="join_Process.php" method="post">
-                <input type="button" class="back" value="<">
-                <h1>회원가입</h1>
-                <input type="text" name="uid" class="input-text" placeholder="아이디"><br>
-                <input type="password" name="upw" class="input-text" placeholder="비밀번호"><br>
-                <input type="text" name="nickname" class="input-text" placeholder="닉네임"><br>
-                <input type="tel" name="p_num" class="input-text" placeholder="전화번호"><br>
-                <input type="submit" id="join-btn" value="회원가입"><br>
-            </from>
+                <div id="header">
+                    <div id="button">
+                        <input type="button" class="back" value="<">
+                    </div>
+                    <div id="link">
+                        <a href="../join/join.html" id="login1">사용자</a>
+                        <a href="../join/manager_join.html" id="login2">식당</a>
+                        <h1>회원가입</h1>
+                    </div>
+                </div><br>
+                <div id="text">
+                    <input type="text" name="uid" class="input-text" placeholder="아이디"><br>
+                    <input type="password" name="upw" class="input-text" placeholder="비밀번호"><br>
+                    <input type="text" name="nickname" class="input-text" placeholder="닉네임"><br>
+                    <input type="tel" name="p_num" class="input-text" placeholder="전화번호"><br>
+                    <input type="submit" id="join-btn" value="회원가입"><br>
+                </div>
+            </form>
         </div>
     </body>
 </html>

@@ -24,7 +24,7 @@
                 echo "<div id='main'>";
                 echo "<div id='header'>";
                 echo "<h1>".$_SESSION['nickname']."님 환영합니다."."</h1>";
-                echo "<h2>3초 후 가게 페이지로 이동합니다.</h2>";
+                echo "<h2>1초 후 가게 페이지로 이동합니다.</h2>";
                 header("Refresh: 1; url='../main/main.php'");
                 echo "</div>";
                 echo "</div>";
@@ -33,7 +33,8 @@
                 echo "<div id='main'>";
                 echo "<div id='header'>";
                 echo "<h2>아이디 또는 비밀번호가 틀렸습니다. 다시 시도해주세요.</h2>";
-                echo "<h2>3초 후 로그인 페이지로 이동합니다.</h2>";
+                echo "<h2>1초 후 로그인 페이지로 이동합니다.</h2>";
+                header("Refresh: 1; url=login.html");
                 echo "</div>";
                 echo "</div>";
             }

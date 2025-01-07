@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>로그인 시스템</title>
+        <title>회원가입 시스템</title>
         <style>
-            body{
+             body{
                 background-color: #e6e6e6; 
                 display: flex;
                 justify-content: center;
@@ -41,10 +41,7 @@
                 border: none;
                 border-radius: 20px;
             }
-            h1{
-                margin: 0;
-                padding-bottom: 40px;
-            }
+
             .input-text{
                 border: 2px solid lightgray;
                 padding: 5px;
@@ -56,76 +53,93 @@
                 border-color: cadetblue;
                 outline: none;
             }
-            #login-btn{
+            #join-btn{
                 width: 260px;
                 height: 30px;
                 border: none;
                 border-radius: 10px;
-                
             }
             a{
-                color:cadetblue;
-                text-decoration: none;
+                font-size: 20px;
+                border-color: black;
+                color: inherit;
                 margin-left: 5px;
+                margin-right: 5px;
             }
-            p{
-                margin: 0;
+            #login1{
+                text-decoration: none;
             }
-            #bottom-links {
-                display: flex;
-                align-items: center;
-                
+            #login2{
+                background-color: antiquewhite;
+            }
+            select{
+                border: 2px solid lightgray;
+                padding: 5px;
+                border-radius: 5px;
+                width: 265px;
+                height: 35px;
             }
             #text{
                 display: flex;  
                 flex-direction: column;  
-                justify-content: center; 
+                /* justify-content: center;  */
                 align-items: center; 
                 height: 100%; 
             }
             #header{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
                 margin-top: 10px;
                 width: 100%;
             }
             #button{
-                float: left;
                 padding-left: 20px;
             }
-            #radio{
+            #link{
                 flex-grow: 1;
                 max-width: 220px;
-                margin: 0 auto;
+                margin-top: 30px;
+                margin: auto;
+                margin-top: 30px;
+                padding-left: 30px;
             }
 
         </style>
     </head>
     <body>
         <div id="main">
-            <form action="login_process.php" method="post">
+            <form action="manager_join_process.php" method="post">
                 <div id="header">
                     <div id="button">
                         <input type="button" class="back" value="<">
                     </div>
-                    <div id="radio">
-                        <input type="radio" class="change-login" name="user" value="restaurant" style="margin-top: 15px;">관리자
-                        <input type="radio" class="change-login" name="user" value="user" checked>사용자
+                    <div id="link">
+                        <a href="../join/join.html" id="login1">사용자</a>
+                        <a href="../join/manager_join.html" id="login2">식당</a>
+                        <h1>회원가입</h1> 
                     </div>
                 </div><br>
                 <div id="text">
-                    <h1>로그인</h1>
-                    <input type="text" name="uid" class="input-text" placeholder="아이디"><br>
-                    <input type="password" name="upw" class="input-text" placeholder="비밀번호"><br>
-                    <input type="submit" id="login-btn" value="로그인"><br>
-                    <div id="bottom-links">
-                        <p>계정이 없으신가요?</p>
-                        <a href="..\join\join.html">회원가입</a>
-                    </div>
+                    <input type="text" name="rid" class="input-text" placeholder="아이디"><br>
+                    <input type="password" name="rpw" class="input-text" placeholder="비밀번호"><br>
+                    <input type="tel" name="p_num" class="input-text" placeholder="전화번호"><br>
+                    <input type="text" name="r_name" class="input-text" placeholder="식당 이름"><br>
+                    <select name="category">
+                        <option value="null">식당 분류</option>
+                        <option value="1">한식</option>
+                        <option value="2">양식</option>
+                        <option value="3">중식</option>
+                    </select><br>
+                    <select name="seatType">
+                        <option value="null">좌석 분류</option>
+                        <option value="1">좌석 타입 1</option>
+                        <option value="2">좌석 타입 2</option>
+                        <option value="3">좌석 타입 3</option>
+                        <option value="4">좌석 타입 4</option>
+                    </select><br>
+                    <input type="submit" id="join-btn" value="등록하기"><br>
                 </div>
-                </div>
-            </from> 
-        </div>   
+            </form>
+        </div>
     </body>
 </html>
