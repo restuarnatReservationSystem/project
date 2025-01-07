@@ -36,6 +36,7 @@
                 echo "<h2>3초 후 로그인 페이지로 이동합니다.</h2>";
                 echo "</div>";
                 echo "</div>";
+                header("Refresh: 1; url='./login.html'");
             }
         ?>
     </body>
