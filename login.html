@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인 시스템</title>
+        <style>
+            body{
+                background-color: #e6e6e6; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh; 
+                margin: 0; 
+            }
+            #main{
+                background-color:cadetblue;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                min-height: 500px;
+                width: 500px; 
+                padding: 20px;
+                display: flex;
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+            }
+            form{
+                background-color: white;
+                border-radius: 10px;
+                min-height: 450px;
+                width: 450px;
+                display: flex;
+                flex-direction: column; 
+                align-items: center; 
+                justify-content: center; 
+                
+            }
+            .back{
+                align-self: flex-start;
+                width: 40px;
+                height: 40px;
+                margin-left: 30px ;
+                border: none;
+                border-radius: 20px;
+            }
+            h1{
+                margin: 0;
+                padding-bottom: 40px;
+            }
+            .input-text{
+                border: 2px solid lightgray;
+                padding: 5px;
+                border-radius: 5px;
+                width: 250px;
+                height: 25px;
+            }
+            input:focus {
+                border-color: cadetblue;
+                outline: none;
+            }
+            #login-btn{
+                width: 260px;
+                height: 30px;
+                border: none;
+                border-radius: 10px;
+                
+            }
+            a{
+                color:cadetblue;
+                text-decoration: none;
+                margin-left: 5px;
+            }
+            p{
+                margin: 0;
+            }
+            #bottom-links {
+                display: flex;
+                align-items: center;
+                
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <form action="login_process.php" method="post">
+                <input type="button" class="back" value="<">
+                <div id="header">
+                    <input type="radio" class="change-login">관리자
+                    <input type="radio" class="change-login">사용자
+                </div><br>
+                <h1>로그인</h1>
+                <input type="text" name="uid" class="input-text" placeholder="아이디"><br>
+                <input type="password" name="upw" class="input-text" placeholder="비밀번호"><br>
+                <input type="submit" id="login-btn" value="로그인"><br>
+                <div id="bottom-links">
+                    <p>계정이 없으신가요?</p>
+                    <a href="join.html">회원가입</a>
+                </div>
+            </from> 
+        </div>   
+    </body>
+</html>
