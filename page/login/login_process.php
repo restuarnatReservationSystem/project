@@ -19,7 +19,15 @@
                 $result = restaurantLoginProcess($uid, $upw);
             }
             
-
+            if (empty($uid) || empty($upw)) {
+                echo "<div id='main'>";
+                echo "<div id='header'>";
+                echo "<h1>모든 입력값을 입력해주세요.</h1>";
+                echo "<h2>1초 후 로그인 페이지로 이동합니다.</h2>";
+                header("Refresh: 1; url='../login/login.html'");
+                echo "</div>";
+                echo "</div>";
+            }else{
             if ($result) {
                 echo "<div id='main'>";
                 echo "<div id='header'>";
@@ -38,6 +46,7 @@
                 echo "</div>";
                 echo "</div>";
             }
+        }
         ?>
     </body>
 </html>
