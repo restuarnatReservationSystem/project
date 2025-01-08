@@ -126,9 +126,9 @@
                     <input type="text" name="r_name" class="input-text" placeholder="식당 이름"><br>
                     <select name="category">
                         <option value="null">식당 분류</option>
-                        <option value="korean">한식</option>
-                        <option value="west">양식</option>
-                        <option value="chinese">중식</option>
+                        <option value="1">한식</option>
+                        <option value="2">양식</option>
+                        <option value="3">중식</option>
                     </select><br>
                     <select name="seatType">
                         <option value="null">좌석 분류</option>
@@ -141,5 +141,12 @@
                 </div>
             </form>
         </div>
+        <script>
+            window.onload = function() {
+                document.querySelector('.back').onclick = function() {
+                    window.location.href = "../login/login.html";
+            }
+        }
+        </script>   
     </body>
 </html>

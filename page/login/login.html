@@ -16,8 +16,8 @@
                 background-color:cadetblue;
                 border-radius: 10px;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-                min-height: 500px;
-                width: 500px; 
+                min-height: 650px;
+                width: 650px; 
                 padding: 20px;
                 display: flex;
                 flex-direction: column; 
@@ -27,19 +27,17 @@
             form{
                 background-color: white;
                 border-radius: 10px;
-                min-height: 450px;
-                width: 450px;
+                height: 600px;
+                width: 600px;
                 display: flex;
-                flex-direction: column; 
-                align-items: center; 
-                justify-content: center; 
+                flex-direction: column;
+                align-items: center;
+                margin: 0px;
                 
             }
             .back{
-                align-self: flex-start;
                 width: 40px;
                 height: 40px;
-                margin-left: 30px ;
                 border: none;
                 border-radius: 20px;
             }
@@ -78,27 +76,68 @@
                 align-items: center;
                 
             }
-            
+            #text{
+                display: flex;  
+                flex-direction: column;  
+                justify-content: center; 
+                align-items: center; 
+                height: 100%; 
+            }
+            #header{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 10px;
+                width: 100%;
+            }
+            #button{
+                float: left;
+                padding-left: 20px;
+            }
+            #radio{
+                flex-grow: 1;
+                max-width: 220px;
+                margin: 0 auto;
+            }
 
         </style>
+        <script>
+            function click(){
+                window.location.href = 'main.php';
+            }
+        </script>
     </head>
     <body>
         <div id="main">
             <form action="login_process.php" method="post">
-                <input type="button" class="back" value="<">
                 <div id="header">
-                    <input type="radio" class="change-login" name="user" value="restaurant">관리자
-                    <input type="radio" class="change-login" name="user" value="user" checked>사용자
+                    <div id="button">
+                        <input type="button" class="back" value="<">
+                    </div>
+                    <div id="radio">
+                        <input type="radio" class="change-login" name="user" value="restaurant" style="margin-top: 15px;">관리자
+                        <input type="radio" class="change-login" name="user" value="user" checked>사용자
+                    </div>
                 </div><br>
-                <h1>로그인</h1>
-                <input type="text" name="uid" class="input-text" placeholder="아이디"><br>
-                <input type="password" name="upw" class="input-text" placeholder="비밀번호"><br>
-                <input type="submit" id="login-btn" value="로그인"><br>
-                <div id="bottom-links">
-                    <p>계정이 없으신가요?</p>
-                    <a href="..\join\join.html">회원가입</a>
+                <div id="text">
+                    <h1>로그인</h1>
+                    <input type="text" name="uid" class="input-text" placeholder="아이디"><br>
+                    <input type="password" name="upw" class="input-text" placeholder="비밀번호"><br>
+                    <input type="submit" id="login-btn" value="로그인"><br>
+                    <div id="bottom-links">
+                        <p>계정이 없으신가요?</p>
+                        <a href="..\join\join.html">회원가입</a>
+                    </div>
+                </div>
                 </div>
             </from> 
-        </div>   
+        </div>
+        <script>
+            window.onload = function() {
+                document.querySelector('.back').onclick = function() {
+                    window.location.href = "../main/main.php";
+            }
+        }
+        </script>   
     </body>
 </html>
