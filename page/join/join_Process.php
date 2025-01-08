@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>회원 가입 시스템</title>
-        <link href="../join/join_process.css" rel="stylesheet" type="text/css" />
+        <link href="./join_process.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <?php
