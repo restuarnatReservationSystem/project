@@ -7,7 +7,7 @@ class Model {
     }
 
     protected function connectDB() {
-        $this->dbconn = mysqli_connect('localhost', 'root', '', 'dbase');
+        $this->dbconn = mysqli_connect('localhost', 'cksgmil223141', 'cksgml200!', 'cksgmil223141');
         if (!$this->dbconn) {
             die(mysqli_connect_error());
         }
