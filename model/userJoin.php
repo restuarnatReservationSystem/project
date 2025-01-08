@@ -5,7 +5,7 @@
         $model = new Model();
         $model->open();
 
-        $query = "INSERT INTO user (user_id, upw, nickname, p_num) VALUES ('$uid', '$upw', '$nickname', '$p_num')";
+        $query = "INSERT INTO customer (customer_id, upw, nickname, p_num) VALUES ('$uid', '$upw', '$nickname', '$p_num')";
         $result = $model->query($query);
 
         if ($result) {

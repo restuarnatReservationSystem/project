@@ -27,9 +27,11 @@
         } else {
             include('../../model/restaurantJoin.php');
             include('../../model/postProcess.php');
+            include('../../model/seat.php');
             
             $result = restaurantJoin($restaurant_id, $rpw, $r_name, $p_num, $category, $seatType);
             createPost($restaurant_id);
+            createseat($r_name, $seatType);
             if ($result) {
                 echo "<div id='main'>";
                 echo "<div id='header'>";

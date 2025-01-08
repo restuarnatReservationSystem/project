@@ -5,7 +5,7 @@
         $model = new Model();
         $model->open();
 
-        $query = "INSERT INTO reservation ('user_id, seat_id') values ('$user_id', '$seat_id');";
+        $query = "INSERT INTO reservation ('customer_id, seat_id') values ('$user_id', '$seat_id');";
         $result = $model->query($query);
 
         if($result){
@@ -21,7 +21,7 @@
         $model = new Model();
         $model->open();
 
-        $query = "DELETE reservation where user_id = '$user_id' && seat_id = '$seat_id' && reservation_end = 'false';";
+        $query = "DELETE reservation where customer_id = '$user_id' && seat_id = '$seat_id' && reservation_end = 'false';";
         $result = $model->query($query);
 
         if($result){
@@ -37,10 +37,10 @@
         $model = new Model();
         $model->open();
 
-        $query = "SELECT r.user_id, r.reservation_time, r.reservation_end, s.r_name, s.s_index
+        $query = "SELECT r.customer_id, r.reservation_time, r.reservation_end, s.r_name, s.s_index
                     FROM reservation r
                     JOIN seat s ON r.seat_id = s.seat_id
-                    WHERE r.user_id = $user_id
+                    WHERE r.customer_id = $user_id
                     ORDER BY r.reservation_time DESC;";
         $result = $model->query($query);
 

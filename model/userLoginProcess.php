@@ -5,13 +5,13 @@
         $model = new Model();
         $model->open();
 
-        $query = "SELECT * FROM user WHERE user_id = '$uid' && upw = '$upw';";
+        $query = "SELECT * FROM customer WHERE customer_id = '$uid' && upw = '$upw';";
         $result = $model->query($query);
         $user = $model->fetch($result);
 
         if(isset($user)){
             session_start();
-            $_SESSION['uid'] = $user['user_id'];
+            $_SESSION['uid'] = $user['customer_id'];
             $_SESSION['nickname'] = $user['nickname'];  
             $_SESSION['time'] = time();
 
@@ -22,9 +22,5 @@
             $model->close();
             return false;
         }
-    }
-
-    function userMyPage($user){
-
     }
 ?>

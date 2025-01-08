@@ -18,7 +18,7 @@ body {
 }
 
 .header {
-    background :#00FFBF;
+    background :cadetblue;
     color: #000000;
     padding: 20px;
     text-align: center;
@@ -56,6 +56,6 @@ body {
 }
 
 .menu li a:hover {
-    background: #00FFBF;
+    background: cadetblue;
     color: #fff;
 }

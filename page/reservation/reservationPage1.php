@@ -23,6 +23,7 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
             background-color: white;
             position: relative;
+            padding: 20px;
         }
         #seat-two, #seat-four {
             text-align: center;
@@ -63,6 +64,8 @@
         }
         #reserve-section {
             margin-top: 20px;
+            text-align: right;
+            width: 100%;
         }
         #reserve-button {
             padding: 10px 20px;
@@ -84,30 +87,33 @@
         <h1>좌석 예약 시스템</h1>
     </div>
     <div id="main">
-        <div id="seat">
-            <div id="seat-two">
-                <button class="seat_2" value="1">1번테이블<br>(2인석)</button>
-                <button class="seat_2" value="2">2번테이블<br>(2인석)</button>
-                <button class="seat_2" value="3">3번테이블<br>(2인석)</button>
-                <button class="seat_2" value="4">4번테이블<br>(2인석)</button>
+        <form id="seat-form" method="POST" action="reservation_session1.php">
+            <div id="seat">
+                <div id="seat-two">
+                    <button type="button" class="seat_2" onclick="selectSeat('1번 테이블')">1번 테이블<br>(2인석)</button>
+                    <button type="button" class="seat_2" onclick="selectSeat('2번 테이블')">2번 테이블<br>(2인석)</button>
+                    <button type="button" class="seat_2" onclick="selectSeat('3번 테이블')">3번 테이블<br>(2인석)</button>
+                    <button type="button" class="seat_2" onclick="selectSeat('4번 테이블')">4번 테이블<br>(2인석)</button>
+                </div>
+                <div id="seat-four">
+                    <button type="button" class="seat_4" onclick="selectSeat('5번 테이블')">5번 테이블<br>(4인석)</button>
+                    <button type="button" class="seat_4" onclick="selectSeat('6번 테이블')">6번 테이블<br>(4인석)</button>
+                    <button type="button" class="seat_4" onclick="selectSeat('7번 테이블')">7번 테이블<br>(4인석)</button>
+                    <button type="button" class="seat_4" onclick="selectSeat('8번 테이블')">8번 테이블<br>(4인석)</button>
+                </div>
             </div>
-            <div id="seat-four">
-                <button class="seat_4" value="5">5번테이블<br>(4인석)</button>
-                <button class="seat_4" value="6">6번테이블<br>(4인석)</button>
-                <button class="seat_4" value="7">7번테이블<br>(4인석)</button>
-                <button class="seat_4" value="8">8번테이블<br>(4인석)</button>
+            <div id="reserve-section">
+                <input type="hidden" id="selected-seat" name="seat" value="">
+                <button id="reserve-button" type="submit">예약하기</button>
             </div>
-        </div>
+        </form>
         <button id="door">문</button>
         <button id="window">창문</button>
     </div>
-    <div id="reserve-section">
-        <button id="reserve-button" onclick="makeReservation()">예약하기</button>
-    </div>
     <script>
-        
-        function makeReservation() {
-            alert("예약이 완료되었습니다!");
+        function selectSeat(seat) {
+            document.getElementById('selected-seat').value = seat;
+            alert(seat + "을 선택하셨습니다!");
         }
     </script>
 </body>

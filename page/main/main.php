@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main</title>
     <link href="./css/main.css" rel="stylesheet" type="text/css" />
-    <link href="./css/header.css" rel="stylesheet" type="text/css" />
+    <link href="./css/heade.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <header class="header">
         <div class="header-left">
-        <a href='../main/main.php' style='text-decoration: none; color: black'><h1 class="title">제목</h1></a>
+        <a href='../main/main.php' style='text-decoration: none; color: black'><h1 class="title">빈자리</h1></a>
         </div>
         <form action='../search/search.php' method='get' class="header-center">
             <input type="text" class="search-bar" placeholder="검색..." name='search'>
@@ -29,14 +29,13 @@
             ?>
         </nav>
     </header>
-
     <section class="category-section">
         <h2 class="category-title">카테고리</h2>
         <div class="categories">
-            <a href="#" class="category-item" onclick="loadCategory(null)">전체</a>
-            <a href="#" class="category-item" onclick="loadCategory('korean')">한식</a>
-            <a href="#" class="category-item" onclick="loadCategory('west')">양식</a>
-            <a href="#" class="category-item" onclick="loadCategory('chinese')">중식</a>
+            <a href="#" class="category-item" onclick="loadCategory(null)" style="border-left: 2px solid #bbb;">전체</a>
+            <a href="#" class="category-item" onclick="loadCategory('1')">한식</a>
+            <a href="#" class="category-item" onclick="loadCategory('2')">양식</a>
+            <a href="#" class="category-item" onclick="loadCategory('3')" style="border-right: 2px solid #bbb;">중식</a>
         </div>
     </section>
 

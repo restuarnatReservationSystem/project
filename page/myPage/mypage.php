@@ -8,7 +8,7 @@ session_start(); // 세션은 PHP 블록 상단에서 시작합니다.
     <meta charset="UTF-8">
     <title>마이페이지</title>
     <link rel="stylesheet" href="./mypage.css">
-    <link rel="stylesheet" href="../main/css/header.css">
+    <link rel="stylesheet" href="../main/css/heade.css">
     <style>
         .hidden {
             display: none;

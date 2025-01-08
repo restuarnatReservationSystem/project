@@ -110,6 +110,7 @@
 <body>
     <div class='container'>
         <div class='header'>
+        <a href='../main/main.php' style='text-decoration: none; color: black; color:cadetblue;'><h1 class="title">빈자리</h1></a>    
             <?php
             session_start();
             $r_name = $_GET['r_name'];
@@ -129,7 +130,7 @@
         </div>
         <div style='display: flex; flex-direction:column;'>
             <div class='menuBar'>
-                <a href="../reservation/reservation<?php echo urlencode($result['seatType']) ?>.html?r_name=<?php echo urlencode($r_name); ?>">좌석</a>
+                <a href="../reservation/reservationPage<?php echo urlencode($result['seatType']) ?>.php?r_name=<?php echo urlencode($r_name); ?>">좌석</a>
                 <button name='Review' style='width:100px;'>리뷰</button>
                 <button name='Menu' style='width:100px;'>메뉴</button>
                 <button name='Info' style='width:100px;'>정보</button>
@@ -146,7 +147,7 @@
                     if ($results) {
                         foreach ($results as $review) {
                             echo "<div class='review'>";
-                            echo "<strong>" . htmlspecialchars($review['user_id']) . "</strong>";
+                            echo "<strong>" . htmlspecialchars($review['customer_id']) . "</strong>";
                             echo "<p>" . nl2br(htmlspecialchars($review['review'])) . "</p>";
                             echo "<p>평점: " . htmlspecialchars($review['review_point']);
                             echo "</div>";
@@ -159,20 +160,24 @@
                 
                     ?>
                 </div>
-                <form class="reviewForm" method="POST" action="reviewProcess.php">
-                    <input type="text" name="r_name" value="<?php echo $r_name; ?>" readonly>
-                    <textarea name="reviewContent" placeholder="리뷰를 입력하세요..."></textarea>
-                    <!-- 평점 입력 -->
-                    <label for="reviewPoint">평점:</label>
-                    <select name="reviewPoint" id="reviewPoint">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <button type="submit">등록</button>
-                </form>
+                <?php
+                    if(isset($_SESSION['uid'])){
+                        echo '<form class="reviewForm" method="POST" action="reviewProcess.php">';
+                        echo    '<input type="text" name="r_name" value="'.$r_name.'" readonly>';
+                        echo    '<textarea name="reviewContent" placeholder="리뷰를 입력하세요..."></textarea>';
+                        echo    '<label for="reviewPoint">평점:</label>';
+                        echo    '<select name="reviewPoint" id="reviewPoint">';
+                        echo        '<option value="1">1</option>';
+                        echo        '<option value="2">2</option>';
+                        echo        '<option value="3">3</option>';
+                        echo        '<option value="4">4</option>';
+                        echo        '<option value="5">5</option>';
+                        echo    '</select>';
+                        echo    '<button type="submit">등록</button>';
+                        echo'</form>';
+                    }
+                ?>
+                
             </div>
         </div>
     </div>

@@ -2,13 +2,13 @@
 <html>
     <head>
         <title></title>
-        <link href="../main/css/header.css" rel="stylesheet" type="text/css" />
+        <link href="../main/css/heade.css" rel="stylesheet" type="text/css" />
         <link href="../main/css/main.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header class="header">
             <div class="header-left">
-            <a href='../main/main.php' style='text-decoration: none; color: black'><h1 class="title">제목</h1></a>
+            <a href='../main/main.php' style='text-decoration: none; color: black'><h1 class="title">빈자리</h1></a>
             </div>
             <form action='../search/search.php' method='get' class="header-center">
                 <input type="text" class="search-bar" placeholder="검색..." name='search'>
@@ -30,8 +30,10 @@
                 $search = $_GET['search'];
       
                 include('../../model/searchRestaurant.php');
+                include('../../model/model.php');
                 $result = searchRestaurant($search);
-    
+                
+                $model = new Model();
                 if ($result && mysqli_num_rows($result) > 0) {
                     while ($row = $model->fetch($result)) {
                         echo '<a href="../restaurantInfoPage/restaurantInfoPage.php?r_name=' . $row['r_name'] . '" class="restaurant-link" style="color: black; text-decoration: none;" onmouseover="this.style.textDecoration=\'underline\'" 
